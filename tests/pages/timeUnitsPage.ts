@@ -7,7 +7,7 @@ class TimeUnitsPage {
     private readonly text: string;
     private readonly continueButton: string;
     private readonly radioButton: string;
-    private readonly radioButtons: string[];
+    // private readonly radioButtons: string[];
     
     constructor() {
         this.title = `.govuk-fieldset__legend`;
