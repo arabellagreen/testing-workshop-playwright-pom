@@ -2,6 +2,8 @@ import { Page } from 'playwright';
 import {expect} from "@playwright/test";
 import shiftHoursPage_content from "../content/shiftHoursPage_content";
 
+import userPath from "../user-path";
+
 class ShiftHoursPage {
     private readonly title: string;
     private readonly continueButton: string;
@@ -31,7 +33,7 @@ class ShiftHoursPage {
     }
 
     async continueOn(page: Page): Promise<void> {
-        await page.fill(this.inputField, '5');
+        await page.fill(this.inputField, userPath.shiftHours);
         await page.click(this.continueButton);
         // Click the continue button
 
