@@ -2,6 +2,8 @@ import { Page } from 'playwright';
 import {expect} from "@playwright/test";
 import leaveYearPage_content from "../content/leaveYearPage_content";
 
+import userPath from "../user-path";
+
 class LeaveYearPage {
     private readonly title: string;
     private readonly text: string;
@@ -39,6 +41,9 @@ class LeaveYearPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.fill('input#response-0', userPath.leaveYear[0]);
+        await page.fill('input#response-1', userPath.leaveYear[1]);
+        await page.fill('input#response-2', userPath.leaveYear[2]);
         await page.click(this.continueButton);
         // Click the continue button
 

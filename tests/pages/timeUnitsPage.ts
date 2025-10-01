@@ -2,6 +2,8 @@ import { Page } from 'playwright';
 import {expect} from "@playwright/test";
 import timeUnitsPage_content from "../content/timeUnitsPage_content";
 
+import userPath from "../user-path";
+
 class TimeUnitsPage {
     private readonly title: string;
     private readonly text: string;
@@ -43,6 +45,7 @@ class TimeUnitsPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.getByLabel(userPath.timeUnits).check();
         await page.click(this.continueButton);
         // Click the continue button
 

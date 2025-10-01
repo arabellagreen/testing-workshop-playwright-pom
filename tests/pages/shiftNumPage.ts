@@ -2,6 +2,8 @@ import { Page } from 'playwright';
 import {expect} from "@playwright/test";
 import shiftNumPage_content from "../content/shiftNumPage_content";
 
+import userPath from "../user-path";
+
 class ShiftNumPage {
     private readonly title: string;
     private readonly continueButton: string;
@@ -31,6 +33,7 @@ class ShiftNumPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.fill(this.inputField, userPath.shiftNum);
         await page.click(this.continueButton);
         // Click the continue button
 

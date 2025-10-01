@@ -2,6 +2,8 @@ import { Page } from 'playwright';
 import {expect} from "@playwright/test";
 import irregularHoursPage_content from "../content/irregularHoursPage_content";
 
+import userPath from "../user-path";
+
 class IrregularHoursPage {
     private readonly title: string;
     private readonly text: string;
@@ -35,9 +37,9 @@ class IrregularHoursPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.getByLabel(userPath.irregularHours).check();
         await page.click(this.continueButton);
         // Click the continue button
-
     }
 }
 
