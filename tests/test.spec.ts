@@ -4,6 +4,8 @@ import IrregularHoursPage from "./pages/irregularHoursPage";
 import LeaveYearPage from "./pages/leaveYearPage";
 import TimeUnitsPage from "./pages/timeUnitsPage";
 import ShiftHoursPage from "./pages/shiftHoursPage";
+import ShiftNumPage from "./pages/shiftNumPage";
+import ShiftDaysPage from "./pages/shiftDaysPage";
 
 test(`Page object model happy path for second test`, async ({ page }): Promise<void> => {
     const landingPage: LandingPage = new LandingPage();
@@ -24,7 +26,15 @@ test(`Page object model happy path for second test`, async ({ page }): Promise<v
     const shiftHoursPage: ShiftHoursPage = new ShiftHoursPage();
     await shiftHoursPage.checkShiftHoursPageLoads(page);
     await shiftHoursPage.continueOn(page);
-    
+
+    const shiftNumPage: ShiftNumPage = new ShiftNumPage();
+    await shiftNumPage.checkShiftNumPageLoads(page);
+    await shiftNumPage.continueOn(page);
+
+    const shiftDaysPage: ShiftDaysPage = new ShiftDaysPage();
+    await shiftDaysPage.checkShiftDaysPageLoads(page);
+    await shiftDaysPage.continueOn(page);
+
     // Continue here!
 });
 // #Hello
