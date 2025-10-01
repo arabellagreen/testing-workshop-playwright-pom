@@ -6,6 +6,7 @@ import TimeUnitsPage from "./pages/timeUnitsPage";
 import ShiftHoursPage from "./pages/shiftHoursPage";
 import ShiftNumPage from "./pages/shiftNumPage";
 import ShiftDaysPage from "./pages/shiftDaysPage";
+import FinalPage from "./pages/finalPage";
 
 test(`Page object model happy path for second test`, async ({ page }): Promise<void> => {
     const landingPage: LandingPage = new LandingPage();
@@ -34,6 +35,9 @@ test(`Page object model happy path for second test`, async ({ page }): Promise<v
     const shiftDaysPage: ShiftDaysPage = new ShiftDaysPage();
     await shiftDaysPage.checkShiftDaysPageLoads(page);
     await shiftDaysPage.continueOn(page);
+
+    const finalPage: FinalPage = new FinalPage();
+    await finalPage.checkPageLoads(page);
 
     // Continue here!
 });
