@@ -1,6 +1,7 @@
 import {test} from "@playwright/test";
 import LandingPage from "./pages/landingPage";
 import IrregularHoursPage from "./pages/irregularHoursPage";
+import TimeUnitsPage from "./pages/timeUnitsPage";
 
 test(`Page object model happy path for second test`, async ({ page }): Promise<void> => {
     const landingPage: LandingPage = new LandingPage();
@@ -8,8 +9,9 @@ test(`Page object model happy path for second test`, async ({ page }): Promise<v
     await landingPage.continueOn(page);
     const irregularHoursPage: IrregularHoursPage = new IrregularHoursPage();
     await irregularHoursPage.checkIrregularHoursPageLoads(page);
-    // await irregularHoursPage.continueOn(page);
-    
-    // Continue here!
+    await irregularHoursPage.continueOn(page);
+    const timeUnitsPage: TimeUnitsPage = new TimeUnitsPage();
+    await timeUnitsPage.checkTimeUnitsPageLoads(page);
+    await timeUnitsPage.continueOn(page);
 });
 // #Hello
