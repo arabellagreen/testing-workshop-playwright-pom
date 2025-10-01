@@ -31,6 +31,7 @@ class ShiftNumPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.fill(this.inputField, '3');
         await page.click(this.continueButton);
         // Click the continue button
 

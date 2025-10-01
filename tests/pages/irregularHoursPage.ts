@@ -35,9 +35,9 @@ class IrregularHoursPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.getByLabel("Yes").check();
         await page.click(this.continueButton);
         // Click the continue button
-
     }
 }
 

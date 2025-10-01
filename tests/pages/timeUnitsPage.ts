@@ -43,6 +43,7 @@ class TimeUnitsPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.getByLabel("Shifts").check();
         await page.click(this.continueButton);
         // Click the continue button
 

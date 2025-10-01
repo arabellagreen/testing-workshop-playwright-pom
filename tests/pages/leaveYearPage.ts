@@ -39,6 +39,9 @@ class LeaveYearPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.fill('input#response-0', '1');
+        await page.fill('input#response-1', '1');
+        await page.fill('input#response-2', '2023');
         await page.click(this.continueButton);
         // Click the continue button
 

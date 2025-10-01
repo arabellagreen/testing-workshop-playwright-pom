@@ -31,6 +31,7 @@ class ShiftDaysPage {
     }
 
     async continueOn(page: Page): Promise<void> {
+        await page.fill(this.inputField, '5');
         await page.click(this.continueButton);
         // Click the continue button
 
