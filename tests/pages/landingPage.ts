@@ -9,7 +9,7 @@ class LandingPage {
 
 
     constructor() {
-        this.title = `.govuk-heading-xl`
+        this.title = `.govuk-heading-xl`;
         this.text = `.govuk-govspeak`;
         this.continueButton = `.govuk-button--start`;
     }
